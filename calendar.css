@@ -1,0 +1,35 @@
+.ajcal {
+  background-color: white;
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+}
+
+table.ajc_daily_calendar th {
+  text-align: center;
+}
+
+table.ajc_daily_calendar td {
+  text-align: center;
+}
+
+.ajc_select_mon {
+  text-align: center;
+  background-color: #ddd;
+}
+
+.ajc_select_mon a {
+  text-decoration: none;
+}
+
+.ajc_dayofweek_0 {
+  color: red;
+}
+
+.ajc_dayofweek_6 {
+  color: blue;
+}
+
+.ajc_othermon {
+  color: #ccc;
+}

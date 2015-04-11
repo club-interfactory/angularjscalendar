@@ -5,16 +5,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calendar.css">
   </head>
   <body ng-controller="MyController">
-    <div>
-      <calendar-daily day="day"></calendar-daily>
-      <div>{{ day }}が選択されました</div>
+    <div ng-click="showCalendar = !showCalendar;">カレンダー</div>
+    <div ng-show="showCalendar">
+      <calendar-daily day="day" start_dayofweek="0" onselect="showCalendar = false"></calendar-daily>
     </div>
-
-    <div>
-      <calendar-daily day="day2"></calendar-daily>
-      <div>{{ day2 }}が選択されました</div>
-    </div>
+    <div>{{ day }}が選択されました</div>
+    <p>
+      あああああ
+    </p>
   </body>
 </html>

@@ -1,23 +1,27 @@
-<a href="javascript:void(0);" ng-click="prevMonth()">&lt;</a>
-{{year}}年{{month+1}}月
-<a href="javascript:void(0);" ng-click="nextMonth()">&gt;</a>
-<table class="daily_calendar">
-  <thead>
-    <tr>
-      <th class="sunday">日</th>
-      <th class="monday">月</th>
-      <th class="tuesday">火</th>
-      <th class="wednesday">水</th>
-      <th class="thursday">木</th>
-      <th class="friday">金</th>
-      <th class="saturday">土</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="week in calendar.weeks">
-      <td ng-repeat="day in week.days track by $index">
-        <span ng-click="clickDay(day)">{{day.caption}}</span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="ajcal">
+  <div class="ajc_select_mon">
+    <a href="javascript:void(0);" ng-click="prevMonth()">&lt;&lt;</a>
+    {{year}}年{{month+1}}月
+    <a href="javascript:void(0);" ng-click="nextMonth()">&gt;&gt;</a>
+  </div>
+  <table class="ajc_daily_calendar">
+    <thead>
+      <tr>
+        <th ng-repeat="dayofweek in dayofweeks">
+          <span ng-class="'ajc_dayofweek_' + dayofweek.value">
+            {{dayofweek.caption}}
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="week in calendar.weeks">
+        <td ng-repeat="day in week.days track by $index">
+          <span ng-class="'ajc_dayofweek_' + day.dayofweek">
+            <span ng-class="{ajc_othermon : day.otherMonth}" ng-click="clickDay(day)">{{day.caption}}</span>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

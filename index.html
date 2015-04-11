@@ -9,7 +9,7 @@
   </head>
   <body ng-controller="MyController">
     <div ng-click="showCalendar = !showCalendar;">カレンダー</div>
-    <div ng-show="showCalendar">
+    <div ng-show="!showCalendar">
       <calendar-daily day="day" start_dayofweek="0" onselect="showCalendar = false"></calendar-daily>
     </div>
     <div>{{ day }}が選択されました</div>
